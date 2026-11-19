@@ -7,6 +7,10 @@ updates:
     schedule:
       interval: weekly
     open-pull-requests-limit: 5
+    ignore:
+      # Nest CLI needs TypeScript's compiler API, which 7.0 doesn't ship (back in 7.1)
+      - dependency-name: typescript
+        versions: ["7.0.x"]
 
   - package-ecosystem: github-actions
     directory: /
